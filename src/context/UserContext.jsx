@@ -14,8 +14,8 @@ export const UserContextProvider = ({ children }) => {
     async function loginUser(email,password,navigate,fetchMyCourse){
         setBtnLoading(true)
         try{
-           // const {data}= await axios.post(`${server}/api/user/login`,{email,password})
-           const {data}= await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/login`,{email,password}) 
+            const {data}= await axios.post(`${server}/api/user/login`,{email,password})
+           //const {data}= await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/login`,{email,password}) 
            
            toast.success(data.message);
            localStorage.setItem("token",data.token);
