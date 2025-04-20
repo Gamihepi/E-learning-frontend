@@ -50,7 +50,7 @@ export const UserContextProvider = ({ children }) => {
         setBtnLoading(true);
         const activationToken = localStorage.getItem("activationToken");
         try {
-          const { data } = await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/verify`, {
+          const { data } = await axios.post(`http://localhost:8081/api/user/verify`, {
             otp,
             activationToken,
           });
