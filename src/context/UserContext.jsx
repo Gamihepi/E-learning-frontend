@@ -14,8 +14,9 @@ export const UserContextProvider = ({ children }) => {
     async function loginUser(email,password,navigate,fetchMyCourse){
         setBtnLoading(true)
         try{
-           const {data}= await axios.post(`${server}/api/user/login`,{email,password})
-
+           // const {data}= await axios.post(`${server}/api/user/login`,{email,password})
+           const {data}= await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/login`,{email,password}) 
+           
            toast.success(data.message);
            localStorage.setItem("token",data.token);
            setUser(data.user);
@@ -33,7 +34,7 @@ export const UserContextProvider = ({ children }) => {
     async function registerUser(name,email,password,navigate){
         setBtnLoading(true)
         try{
-           const {data}= await axios.post(`http://localhost:8081/api/user/register`,{name,email,password})
+           const {data}= await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/register`,{name,email,password})
 
            toast.success(data.message);
            localStorage.setItem("activationToken",data.activationToken);
@@ -49,7 +50,7 @@ export const UserContextProvider = ({ children }) => {
         setBtnLoading(true);
         const activationToken = localStorage.getItem("activationToken");
         try {
-          const { data } = await axios.post(`http://localhost:8081/api/user/verify`, {
+          const { data } = await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/verify`, {
             otp,
             activationToken,
           });
