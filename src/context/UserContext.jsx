@@ -67,7 +67,7 @@ export const UserContextProvider = ({ children }) => {
 
    async function fetchUser() {
     try {
-    const {data} = await axios.get(`https://e-learning-server-e95j.onrender.com/api/user/me`,
+    const {data} = await axios.get(`http://localhost:8081/api/user/me`,
         {
             headers: {
                 token : localStorage.getItem("token"),},
