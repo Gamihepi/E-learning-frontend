@@ -34,7 +34,7 @@ export const UserContextProvider = ({ children }) => {
     async function registerUser(name,email,password,navigate){
         setBtnLoading(true)
         try{
-           const {data}= await axios.post(`https://e-learning-server-e95j.onrender.com/api/user/register`,{name,email,password})
+           const {data}= await axios.post(`http://localhost:8081/api/user/register`,{name,email,password})
 
            toast.success(data.message);
            localStorage.setItem("activationToken",data.activationToken);
