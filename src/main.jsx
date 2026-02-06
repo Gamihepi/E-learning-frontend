@@ -5,7 +5,7 @@ import { UserContextProvider } from './context/UserContext.jsx';
 import { CourseContextProvider } from './context/CourseContext.jsx';
 
 // export const server = "https://e-learning-server-e95j.onrender.com";
-export const server = "https://e-learning-server-1-h7di.onrender.com"
+export const server = "https://e-learning-server-1-h7di.onrender.com";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
